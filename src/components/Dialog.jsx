@@ -1,4 +1,4 @@
-import { images } from "../data";
+import iconMenuClose from "../assets/images/icon-menu-close.svg";
 
 const Dialog = ({ open, onClose, navigations }) => {
   return (
@@ -11,7 +11,7 @@ const Dialog = ({ open, onClose, navigations }) => {
             className="float-right cursor-pointer"
           >
             <span className="sr-only">Close button</span>
-            <img src={images.iconMenuClose} alt="" />
+            <img src={iconMenuClose} alt="" />
           </button>
           <div className="flex flex-col mt-10 *:my-2">
             {navigations.map((item) => (

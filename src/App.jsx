@@ -1,16 +1,28 @@
 import { useState } from "react";
-import { images, articles, navigations, cards } from "./data";
+import { articles, navigations, cards } from "./data";
+import web3Desktop from "./assets/images/image-web-3-desktop.jpg";
+import logo from "./assets/images/logo.svg";
+import iconMenu from "./assets/images/icon-menu.svg";
+import topLaptops from "./assets/images/image-top-laptops.jpg";
+import retroPcs from "./assets/images/image-retro-pcs.jpg";
+import gamingGrowth from "./assets/images/image-gaming-growth.jpg";
 import Dialog from "./components/Dialog";
+
+const images = [retroPcs, topLaptops, gamingGrowth];
 
 const App = () => {
   const [isMobileMenu, setIsMobileMenu] = useState(false);
 
   return (
-    <div className={`${isMobileMenu && "bg-(--Grayish-blue)"} transition-all p-10 text-lg`}>
+    <div
+      className={`${
+        isMobileMenu && "bg-(--Grayish-blue)"
+      } transition-all p-10 text-lg`}
+    >
       <header>
         <nav className="flex justify-between">
           <div>
-            <img src={images.logo} alt="" />
+            <img src={logo} alt="" />
           </div>
           <div className="hidden sm:flex">
             {navigations.map((item) => (
@@ -26,7 +38,7 @@ const App = () => {
           <div className="sm:hidden flex">
             <button type="button" onClick={() => setIsMobileMenu(true)}>
               <span className="sr-only">Open menu</span>
-              <img src={images.iconMenu} alt="" />
+              <img src={iconMenu} alt="" />
             </button>
           </div>
         </nav>
@@ -40,7 +52,7 @@ const App = () => {
       <main>
         <div className="grid sm:grid-cols-[2fr_1fr] gap-5 py-4 grid-cols-1 transition-all">
           <div>
-            <img src={images.imageWeb3Desktop} alt="" />
+            <img src={web3Desktop} alt="" />
             <div className="grid sm:grid-cols-2 grid-cols-1">
               <div>
                 <h1 className="font-bold text-5xl">
@@ -84,12 +96,14 @@ const App = () => {
         <div className="grid gap-5 grid-cols-1 sm:grid-cols-3 mt-8">
           {cards.map((item, index) => (
             <div className="flex gap-5" key={item.name}>
-              <img className="max-w-full w-30" src={item.image} alt="" />
+              <img className="max-w-full w-30" src={images[index]} alt="" />
               <div>
                 <p className="text-2xl font-bold text-(--Soft-red)">
                   0{index + 1}
                 </p>
-                <p className="font-bold hover:text-(--Soft-red) cursor-pointer transition-all">{item.name}</p>
+                <p className="font-bold hover:text-(--Soft-red) cursor-pointer transition-all">
+                  {item.name}
+                </p>
                 <p className="text-(--Dark-grayish-blue)">{item.description}</p>
               </div>
             </div>
