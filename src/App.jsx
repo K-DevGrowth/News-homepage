@@ -53,7 +53,7 @@ const App = () => {
         <div className="grid sm:grid-cols-[2fr_1fr] gap-5 py-4 grid-cols-1 transition-all">
           <div>
             <img src={web3Desktop} alt="" />
-            <div className="grid sm:grid-cols-2 grid-cols-1">
+            <div className="grid sm:grid-cols-2 grid-cols-1 mt-4">
               <div>
                 <h1 className="font-bold text-5xl">
                   The Bright Future of Web 3.0?
