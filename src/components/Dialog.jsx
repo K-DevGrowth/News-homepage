@@ -4,7 +4,7 @@ const Dialog = ({ open, onClose, navigations }) => {
   return (
     <>
       {open && (
-        <div className="fixed overflow-y-auto max-w-sm w-80 right-0 inset-y-0 bg-white p-10">
+        <div className="fixed overflow-y-auto sm:hidden max-w-sm w-80 right-0 inset-y-0 bg-white p-10">
           <button
             type="button"
             onClick={() => onClose(false)}

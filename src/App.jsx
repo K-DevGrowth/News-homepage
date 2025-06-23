@@ -16,14 +16,14 @@ const App = () => {
   return (
     <div
       className={`${
-        isMobileMenu && "bg-(--Grayish-blue)"
-      } transition-all p-10 text-lg`}
+        isMobileMenu ? "bg-(--Grayish-blue)" : "bg-white"
+      } transition-all p-10 text-lg sm:bg-white`}
     >
       <header>
         <nav className="flex justify-between">
-          <div>
-            <img src={logo} alt="" />
-          </div>
+          <a href="#">
+            <img src={logo} alt="" className="cursor-pointer" />
+          </a>
           <div className="hidden sm:flex">
             {navigations.map((item) => (
               <a
@@ -36,7 +36,11 @@ const App = () => {
             ))}
           </div>
           <div className="sm:hidden flex">
-            <button type="button" onClick={() => setIsMobileMenu(true)}>
+            <button
+              type="button"
+              className="cursor-pointer"
+              onClick={() => setIsMobileMenu(true)}
+            >
               <span className="sr-only">Open menu</span>
               <img src={iconMenu} alt="" />
             </button>
