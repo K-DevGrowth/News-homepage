@@ -19,7 +19,7 @@ const App = () => {
     >
       <header>
         <nav className="flex justify-between">
-          <a href="">
+          <a href="#">
             <img src="./logo.svg" alt="" className="cursor-pointer" />
           </a>
           <div className="hidden sm:flex">
